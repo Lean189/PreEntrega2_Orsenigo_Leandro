@@ -16,7 +16,7 @@ body {
 
 .main {
     padding: 20px;
-    flex: 1; /* Para que el contenido ocupe el espacio restante */
+    flex: 1; 
 }
 
 /* Header */
@@ -43,15 +43,22 @@ body {
 
 .navbar ul {
     display: flex;
+    justify-content: center;
     list-style: none;
     gap: 25px;
     font-size: 15px;
+    flex-wrap: wrap;
+    padding: 0;
 }
 
 .navbar a {
     text-decoration: none;
     color: #333;
-    transition: color 0.3s ease;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 0;
+
 }
 
 .navbar a:hover {
@@ -90,7 +97,7 @@ footer {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
     padding: 20px;
-    background-color: orange;
+    background-color: rgb(223, 173, 81);
 }
 
 .card-info {
@@ -149,11 +156,11 @@ footer {
 
 /* Estilos para el buscador y las categorías */
 .search-and-categories {
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
     gap: 20px;
     padding: 20px;
-    background-color: #fff;
+    background-color: #f3af1b;
     border-radius: 10px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
@@ -162,7 +169,7 @@ footer {
 .search-container {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
 }
 
 .search-container input[type="search"] {
@@ -170,7 +177,6 @@ footer {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
-    flex: 1;
 }
 
 .categories {
