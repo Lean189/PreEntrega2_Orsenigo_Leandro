@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #f5f5f5;
+    background: linear-gradient(to bottom, #f7ab49, #f4f4f4);
     line-height: 1.6;
     display: flex;
     flex-direction: column;
@@ -16,7 +16,7 @@ body {
 
 .main {
     padding: 20px;
-    flex: 1; 
+    flex: 1;
 }
 
 /* Header */
@@ -58,7 +58,6 @@ body {
     display: inline-block;
     padding: 10px;
     border-radius: 0;
-
 }
 
 .navbar a:hover {
@@ -97,7 +96,8 @@ footer {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
     padding: 20px;
-    background-color: rgb(223, 173, 81);
+    background-color: rgba(223, 173, 81, 0.8);
+    border-radius: 10px;
 }
 
 .card-info {
@@ -113,8 +113,9 @@ footer {
 }
 
 .card-info img {
-    width: 50px;
-    height: 60px;
+    width: 100%;
+    height: auto;
+    max-height: 150px;
     object-fit: contain;
 }
 
@@ -136,80 +137,70 @@ footer {
     background-color: #0056b3;
 }
 
-/* Colores de las tarjetas */
-.card-1 { background-color: lightblue; }
-.card-2 { background-color: lightcoral; }
-.card-3 { background-color: lightgreen; }
-.card-4 { background-color: lightpink; }
-.card-5 { background-color: lightseagreen; }
-.card-6 { background-color: lightblue; }
-.card-7 { background-color: lightblue; }
-.card-8 { background-color: lightblue; }
-.card-9 { background-color: lightblue; }
-.card-10 { background-color: lightblue; }
-.card-11 { background-color: lightblue; }
-.card-12 { background-color: lightblue; }
-.card-13 { background-color: lightblue; }
-.card-14 { background-color: lightblue; }
-.card-15 { background-color: lightblue; }
-.card-16 { background-color: lightblue; }
+/* Responsive*/
+@media (max-width: 768px) {
+    .container-info {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
 
-/* Estilos para el buscador y las categorías */
-.search-and-categories {
-    display: inline-flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-    background-color: #f3af1b;
-    border-radius: 10px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+    .search-and-categories {
+        grid-template-columns: 1fr;
+    }
+
+    .categories {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
 }
 
-.search-container {
-    display: flex;
-    align-items: center;
-    gap: 5px;
+@media (max-width: 480px) {
+    .container-info {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .titulo {
+        font-size: 30px;
+    }
 }
 
-.search-container input[type="search"] {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .navbar ul {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .main.tienda {
+        grid-template-columns: 1fr;
+    }
+    
+    .search-and-categories {
+        position: static;
+    }
+    
+    .contact-container,
+    .login-container {
+        flex-direction: column;
+    }
 }
 
-.categories {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+@media (max-width: 480px) {
+    .titulo {
+        font-size: 30px;
+    }
+    
+    .card-info {
+        padding: 15px;
+    }
 }
-
-.categories h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
-.categories ul {
-    list-style: none;
-    padding: 0;
-}
-
-.categories ul li {
-    margin-bottom: 10px;
-}
-
-.categories ul li a {
-    text-decoration: none;
-    color: #333;
-    font-size: 16px;
-    transition: color 0.3s ease;
-}
-
-.categories ul li a:hover {
-    color: #007BFF;
-}
-
 
 /* Formulario de contacto */
 .contact-section {
@@ -223,19 +214,19 @@ footer {
 }
 
 .contact-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
     align-items: center;
-    gap: 20px;
 }
 
 .contact-form {
-    flex: 1 1 40%;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+    background: rgba(255,255,255,0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
+
 
 .contact-form label {
     font-weight: bold;
@@ -257,16 +248,16 @@ footer {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 1.1rem;
 }
 
 .contact-form button:hover {
     background-color: #0056b3;
 }
 
-.contact-image {
-    flex: 1 1 40%;
-    text-align: center;
+.contact-image img {
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .contact-image img {
